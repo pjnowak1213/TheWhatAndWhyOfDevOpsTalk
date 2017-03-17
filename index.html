@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The What and Why of DevOps</title>
+    <meta charset="utf-8">
+    <style>
+            
+      body {
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+        color: #272822;
+      }      
+      h1, h2, h3 {
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+        font-weight: 400;
+        margin-bottom: 0;       
+      }
+
+     .remark-slide-content h1 { font-size: 2.5em; }
+     .remark-slide-content h2 { font-size: 2em; }
+     .remark-slide-content h3 { font-size: .6em; }
+
+     .footnote {
+        position: absolute;
+        bottom: 1em;
+        float: right;
+        width: 100%;
+        left: 0px;
+      }
+
+      .footnote p
+      {
+        float: right;
+        margin-right: 20px;
+      }
+
+      li { 
+        line-height: 2em;
+        font-size: 1.5em;
+        }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      .remark-slide-content { 
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 15px;  
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+
+      .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      .left-shadded-box, .right-shadded-box
+      {
+        width: 40%;
+        height: 100%;
+        background-color: rgba(230,230,230, .9);
+        padding: 1em 1em 1em 1em;
+      }
+
+      .right-shadded-box
+      {       
+        float: right;
+      }
+
+      .inverse, .orange {
+        background: #d65420;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .bottom {
+        position: absolute;
+        bottom: 100px;
+        width: 100%;
+        left: 0px;
+      }
+
+      .bottom-title, 
+      .top-title
+      {
+        width: 100%;
+        background: #272822;
+        color: #f3f3f3;
+        text-shadow: 0 0 20px #333;        
+        left: 0px;
+        position: absolute;
+      }
+
+      .bottom-title
+      {
+        bottom: 20px;
+      }
+
+      .top-title h1,
+      .bottom-title h1 {
+        margin-left: 40px;
+        margin-bottom: 20px;
+      }
+
+      .purple {
+        background: #250854;
+      }
+
+      .blue {
+        background: blue
+      }
+
+      .section-slide {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      
+      .section-slide h1,
+      .section-slide h2,
+      .inverse h1,
+      .inverse h2{
+        color: #f3f3f3;
+        
+        font-size: 70px;
+      }
+
+      .section-slide p,
+      .inverse p {
+        color: #f3f3f3;
+        line-height: 0.8em;
+        font-size: 30px;
+      }
+
+      .title h1
+      {
+        font-size: 4em;
+        font-weight: 900;
+      }
+
+      .quote h1
+      {
+        font-size: 50px;
+      }
+
+      .quote h1 strong
+      {
+        font-size: 1.5em;
+      }
+
+      .contain-image
+      {
+        background-size: contain;
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, title
+
+background-image: url("images/BikeGearTransparent.png")
+
+# the what and why of DevOps
+
+---
+name: the problem
+class: center, middle, section-slide
+
+# the problem
+
+---
+
+background-image: url("images/firefighters.jpeg")
+
+.left-shadded-box[
+  ## operations
+- too much firefighting
+- fragile applications
+- unplanned work
+- lots of time to restore service
+- a lot of time troubleshooting
+]
+
+---
+
+background-image: url("images/DeathMarch.jpg")
+
+.right-shadded-box[
+## development
+- more Death Marches
+- long Release cycles
+- fragile Code
+- failing big deployments
+] 
+
+---
+background-image: url("images/IT-guy.jpg")
+
+.left-shadded-box[
+# ops guy
+  - yells a lot
+  - constantly fixing things
+  - always frustrated
+]
+
+---
+
+background-image: url("images/SoftwareDeveloper-guy.jpeg")
+
+.right-shadded-box[# developer
+  - a little bit weird
+  - lives in his parents basement  
+  - quiet
+  - has a girlfriend in Canada
+  - loves video games
+]
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# Ops who think like devs
+# Devs who think like ops
+~ Gene Kim
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# DevOps
+
+---
+
+name: inverse
+class: center, middle, inverse, purple
+
+# this is still incomplete
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# security
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# change managment
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# user experience
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# quality assurance
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# the business
+
+---
+
+name: inverse
+class: center, middle, inverse, purple
+
+# ^(? &lt; dept &gt;+)Ops$
+
+---
+
+name: inverse
+class: center, middle, section-slide
+
+# the history
+
+---
+
+.top-title[
+ # The Lean Movment
+ ]
+
+.bottom.center[![image](images/leanprinciples.png)]
+
+???
+
+- Lean Movment
+- Kanban 
+- Value Stream Mapping
+- Toyota Production System
+- Toyota Kata movement
+- Theory of Constrants
+
+---
+
+background-image: url("images/ToyotaFactory.jpg")
+
+.top-title[
+ #Toyota Production System
+ ]
+
+???
+
+## Toyota Production System
+  - Highest Quality, Lowest Cost, Shortest Lead Time
+  - Continuous Flow
+  - Stability
+
+---
+
+background-image: url("images/AgileManifesto.png")
+
+???
+
+## Agile Manifesto
+Deliver working software frequently, from a couple of weeks to a couple of months.
+
+---
+
+class: contain-image
+
+background-image: url("images/ThePhoenixProject.png")
+
+???
+
+## The Phoenix Project
+
+---
+
+name: inverse
+class: center, middle, section-slide
+
+# the three ways
+
+---
+
+class: center, middle, quote, inverse
+
+# The process required to convert a **business hypothesis** into a technology-enabled service that delivers **value** to the customer
+~ Gene Kim, Jez Humble, Patrick Debois & John Willis
+
+???
+
+- Value is created only when our service is in production
+- Fast Flow
+- Deployments can be made with out causing choas and disruptions
+
+---
+
+
+background-image: url("images/Value-Stream-Mapping.jpg")
+
+???
+## Value Stream Mapping
+  - What does it take to go from concept to cash
+  - Look at big picture
+  - Visualize how information and material flow
+  - Identifiy none value add steps
+
+
+---
+
+class: center, middle, quote, inverse, purple
+
+# the first way
+# *the principles of flow*
+
+
+???
+
+# Make our work visible
+
+- Our work is invisable, not like manufacturing
+- Work can travel between teams easy
+- With the click of a button.
+- Email
+- It can easly stack up then with no real visability
+
+---
+
+background-image: url("images/Kanban-Board.jpg")
+
+.bottom-title[
+  # visualize work
+]
+
+???
+
+## Kanban Board
+ - Span our entire value stream
+ - Visualize work
+ - Limit work in progress
+ - Goal is to make work flow as quickly as possible
+ - We can measure lead time
+
+---
+
+background-image: url("images/B-17Es_at_Boeing_Plant,_Seattle,_Washington,_1943.jpg")
+
+.bottom-title[
+  # limit work in process
+]
+
+???
+
+## Manufacturing
+- Daily work dictated by a production schedule
+- War time a lot WIP
+
+## Technology 
+- Work is far more dynamic
+- Not easy to see in technolagy
+
+Image: Boeing B-17 Plant in Seattle Washington 1943
+---
+
+background-image: url("images/interrupt.jpg")
+
+???
+
+## Interuptions & Distractions
+- Can you do this for me really quickly
+
+
+---
+
+background-image: url("images/BlueScreenOfDeath.gif")
+
+???
+
+# Interuptions & Distractions
+- Outages
+- Crashes
+
+---
+
+background-image: url("images/TrainFilledWithCars.jpg")
+
+.bottom-title[
+  # reduce batch size
+]
+
+???
+
+- Large batch sizes results in larger WIP
+- Big bang deployments
+- Lots for risk
+
+---
+
+background-image: url("images/TrainAccident.jpg")
+
+???
+
+- Large batch sizes results in larger WIP
+- Big bang deployments
+- Lots for risk
+
+---
+
+background-image: url("images/SoftwareDevelopment.jpg")
+
+???
+
+# Continuous Deployment
+
+## Ever change is:
+  - Committed to version controll
+  - Intergrated
+  - Tested
+  - Deployed to Production
+
+---
+
+background-image: url("images/Handoffs.jpg")
+
+.bottom-title[
+  # reduce handoffs
+]
+
+???
+
+# Problems
+- Everytime work passes from team to team it requires communication
+- Each step is then a potential queue
+- Relying on shared resources
+- Knowledge is lost
+
+---
+
+background-image: url("images/Tesla-multi-tasking-robots.jpg")
+
+???
+
+# Automate significant parts of the work
+
+---
+
+background-image: url("images/Teams.jpg")
+
+???
+
+ # Reorginize teams so that they can deliver value to the customers themselves
+
+---
+
+background-image: url("images/woman-bottleneck.jpg")
+
+.top-title[
+  # identify and elevate constrants
+]
+
+???
+
+ # Removing Bottlenecks
+ - Identify the constraint
+ - Exploit the constraint
+ - Subordinate everthing else to the above constraint 
+ - Eleviate the constraint
+
+# In Software Developemt that could be... 
+---
+
+name: inverse
+class: center, middle, inverse
+
+# environment creation
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# code depolyments
+
+---
+
+name: inverse
+class: center, middle, inverse
+
+# test setup and run
+
+---
+
+class: center, middle, inverse
+
+# tightly coupled architecture
+
+---
+
+background-image: url("images/waste.jpeg")
+
+.top-title[
+  # eliminate waste in the value stream
+]
+
+---
+
+class: contain-image
+
+background-image: url("images/ImplementingLeanSoftwareDevelopmentBook.jpg")
+
+---
+
+background-image: url("images/PartiallyDone.jpg")
+
+.bottom-title[
+ # partially done work 
+]
+
+???
+
+# Any work in the value stream that has not been completed
+ - Requirment Documents
+ - Work that is sitting in a queue
+
+---
+
+background-image: url("images/approval.jpg")
+
+.bottom-title[
+  # extra process
+]
+
+???
+
+# Any work that is being done that does not add value to the customer
+
+- Documentation not used in downstream work
+- Reviews
+- Approvals 
+
+---
+
+background-image: url("images/GoldPlating.jpeg")
+
+.bottom-title[
+  # extra features
+]
+
+???
+
+# Features build in that are not needed
+
+- Gold Plating
+
+---
+
+background-image: url("images/Multitasking.jpg")
+
+.bottom-title[
+  # task switching
+]
+
+???
+
+# People assigned to multiple projects
+
+- Difficault to manage dependiances 
+- Context switching 
+
+---
+
+background-image: url("images/AirportTerminal.jpg")
+
+.top-title[
+  # waiting
+]
+
+???
+
+# Delays between work 
+
+- Increases cycle time
+
+---
+
+background-image: url("images/Barge.jpg")
+
+.top-title[
+  # motion
+]
+
+???
+
+# The amount of effort to move information or materials from one work area (team) to another
+
+- When people need to communicate frequently that are not colocated
+
+---
+
+background-image: url("images/rework.jpg")
+
+.top-title[
+  # defects
+]
+???
+
+# Bugs, un clear requirments
+
+-  The longer they go un fixed the more costly they become
+
+---
+
+class: center, middle, inverse
+
+# nonstandard or manual work
+
+???
+
+# Reliance on others to do stuff
+
+- non-rebuild servers
+- Test environments
+
+---
+
+background-image: url("images/SuperHero.jpg")
+
+.bottom-title[
+  # heroics
+]
+
+???
+
+# Individuals  and teams put in a position where they must perform unrealistic tasks
+
+- Nightly problems in production
+- Late night deplyments
+
+---
+
+background-image: url("images/FirstWay.png")
+
+.top-title[
+# the first way
+]
+
+.footnote[
+Gene Kim, * The Phoenix Project *
+]
+
+---
+
+class: center, middle, quote, inverse, purple
+
+ # the second way 
+ # * the principle of feedback *
+
+???
+
+- Fast feedback from right to left
+- Not waiting till fatial error accours
+
+---
+
+
+
+background-image: url("images/hesdeadjim.jpg")
+
+???
+
+Catch errors when they are smalller and eaiser to fix
+
+---
+
+background-image: url("images/Three_Mile_Island_nuclear_power_plant.jpg")
+
+.bottom-title[
+  # complex systems
+]
+
+???
+
+## 1. Dr. Charles Perrow studied the disaster
+- Concluded that not one person can determin how the system is going to behave in every situation
+- When issue was happening in one place difficault to isolate from the other areas
+
+## 2. Technology / Infustructor complex system
+
+---
+
+background-image: url("images/Andon.jpg")
+
+.bottom-title[
+  # see problems as they occur
+]
+
+???
+
+# Andon Cord
+
+- Stop the line when problem occurs
+
+---
+
+background-image: url("images/startup-photos.jpg")
+
+.bottom-title[
+  # swarm to solve problems
+]
+
+---
+
+.bottom-title[
+  # push qualty
+]
+
+---
+
+.bottom-title[
+  # optomize for downstream work
+]
+
+---
+
+background-image: url("images/SecondWay.png")
+
+.top-title[
+# the second way
+]
+
+.footnote[
+Gene Kim, * The Phoenix Project *
+]
+
+---
+
+class: center, middle, quote, inverse, purple
+
+ # the third way 
+ # * the principle of continual learning and experimentation *
+
+---
+
+# organizational learning
+
+---
+
+# improvment of daily work
+
+---
+
+background-image: url("images/ThirdWay.png")
+
+.top-title[
+# the third way
+]
+
+.footnote[
+Gene Kim, * The Phoenix Project *
+]
+
+---
+
+name: inverse
+class: center, middle, section-slide
+
+# the value
+
+---
+
+class: center, middle, quote, inverse
+
+# By installing a rampant innovation culture, we performed 165 experiments in the peak three months of tax season. Our business result? Conversion rate [in our customer acquisition funnel] is up 50%. Employee result? Everyone loves it, because their new ideas can make it to market. 
+
+~ Scott Cook, * Founder Intuit *
+
+---
+
+class: center, middle, inverse, purple
+
+# 200 times more frequent code deployment
+
+.footnote[
+2016 State of DevOps Report
+]
+
+---
+
+class: center, middle, inverse, purple
+
+# 2,555 times faster lead times
+
+.footnote[
+2016 State of DevOps Report
+]
+
+---
+
+class: center, middle, inverse, purple
+
+# 24 times faster mean time to recovery
+
+.footnote[
+2016 State of DevOps Report
+]
+
+---
+
+class: center, middle, inverse, purple
+
+# 3 times lower change failure rate
+
+.footnote[
+2016 State of DevOps Report
+]
+
+---
+
+---
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
