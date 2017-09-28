@@ -64,6 +64,27 @@
         padding-top: 1em;
       }
 
+      .left-text
+      {
+        width: 40%;
+        height: 100%;
+        padding: 1em 1em 1em 1em;
+      }
+
+      .text-orange
+      {
+        color: #d65420;
+      }
+
+     .remark-slide-content .left-text h1 { font-size: 4em; }
+     .remark-slide-content .left-text h2 { font-size: 2em; }
+     .remark-slide-content .left-text h3 { font-size: 1em; }
+
+     .left-text li
+     {
+       color:#272822
+     }
+
       .left-shadded-box, .right-shadded-box
       {
         width: 40%;
@@ -163,18 +184,40 @@
         background-size: contain;
       }
 
+      .contain-image-right
+      {
+        background-size: contain;
+        background-position: 75% 25%
+      }
 
+      .icon-image {
+        background-size: 70%;
+        background-position: 95% 95%
+      }
 
     </style>
   </head>
   <body>
     <textarea id="source">
 
-class: center, middle, title
+class: center, title, icon-image
 
-background-image: url("images/BikeGearTransparent.png")
+background-image: url("images/TechnologyHub.png")
 
 # The What And Why of DevOps
+
+---
+class: contain-image-right, text-orange
+
+background-image: url("images/Peter_Nowak.png")
+
+.left-text[
+# Peter Nowak
+###*Agile Coach, Change Agent, Architect, Speaker, DevOps*
+
+ - www.peternowak.me
+ - pjnowak@gmail.com
+]
 
 ---
 name: The Problem
@@ -363,6 +406,11 @@ class: center, middle, section-slide
 
 # The History
 
+???
+#DevOps came from a lot of movements comming together.
+- Lots of lessons learned and brought together
+- A lot of practices from manufacturing
+
 ---
 
 .top-title[
@@ -373,7 +421,7 @@ class: center, middle, section-slide
 
 ???
 
-- Lean movment
+# Lean movment
 - Kanban 
 - Value stream mapping
 - Toyota Production System
@@ -429,6 +477,7 @@ class: center, middle, quote, inverse
 ~ Gene Kim, Jez Humble, Patrick Debois & John Willis
 
 ???
+# What do we need?
 
 - Value is created only when our service is in production
 - Fast Flow
@@ -440,7 +489,7 @@ class: center, middle, quote, inverse
 background-image: url("images/Value-Stream-Mapping.jpg")
 
 ???
-## Value Stream Mapping
+# Value Stream Mapping
   - What does it take to go from concept to cash
   - Look at big picture
   - Visualize how information and material flow
@@ -475,13 +524,14 @@ background-image: url("images/Kanban-Board.jpg")
 
 ???
 
-## Kanban Board
+# Kanban Board
  - Span our entire value stream
  - Visualize work
  - Limit work in progress
  - Goal is to make work flow as quickly as possible
  - We can measure lead time
 
+## How to increase flow...
 ---
 
 background-image: url("images/B-17Es_at_Boeing_Plant,_Seattle,_Washington,_1943.jpg")
@@ -492,11 +542,11 @@ background-image: url("images/B-17Es_at_Boeing_Plant,_Seattle,_Washington,_1943.
 
 ???
 
-## Manufacturing
+# Manufacturing
 - Daily work dictated by a production schedule
 - War time a lot WIP
 
-## Technology 
+# Technology 
 - Work is far more dynamic
 - Not easy to see in technolagy
 
@@ -591,12 +641,15 @@ background-image: url("images/Tesla-multi-tasking-robots.jpg")
 - Change Managment
 
 ---
-
-background-image: url("images/Teams.jpg")
+class: contain-image
+background-image: url("images/Bulls.jpg")
 
 ???
 
  # Reorginize teams so that they can deliver value to the customers themselves
+- Keep them together
+- Feed work to team
+- Cross functional 
 
 ---
 
@@ -824,7 +877,7 @@ background-image: url("images/hesdeadjim.jpg")
 
 ???
 
-Catch errors when they are smalller and eaiser to fix
+#Catch errors when they are smalller and eaiser to fix
 
 ---
 
@@ -891,6 +944,10 @@ background-image: url("images/SecondWay.png")
 .footnote[
 Gene Kim, * The Phoenix Project *
 ]
+
+???
+
+# The Principle of Feedback
 
 ---
 
@@ -962,40 +1019,40 @@ class: center, middle, quote, inverse
 
 class: center, middle, inverse, purple
 
-# 200 times more frequent code deployment
+# 46 times more frequent code deployment
 
 .footnote[
-2016 State of DevOps Report
+2017 State of DevOps Report
 ]
 
 ---
 
 class: center, middle, inverse, purple
 
-# 2,555 times faster lead times
+# 440 times faster lead times
 
 .footnote[
-2016 State of DevOps Report
+2017 State of DevOps Report
 ]
 
 ---
 
 class: center, middle, inverse, purple
 
-# 24 times faster mean time to recovery
+# 96 times faster mean time to recovery
 
 .footnote[
-2016 State of DevOps Report
+2017 State of DevOps Report
 ]
 
 ---
 
 class: center, middle, inverse, purple
 
-# 3 times lower change failure rate
+# 5 times lower change failure rate
 
 .footnote[
-2016 State of DevOps Report
+2017 State of DevOps Report
 ]
 
 ---
@@ -1021,36 +1078,41 @@ class: center, middle, inverse
 
 ---
 
-background-image: url("images/UnitTest.jpeg")
+class: center, middle, inverse, purple
 
-.left-shadded-box[
-## Unit Testing
-- nUnit
-- MSTest
-- TestNG
-- jUnit
-    ]
+# Testing?
+
+???
+
+---
+class: contain-image
+
+background-image: url("images/TestingPyramid.png")
 ---
 
 background-image: url("images/build.png")
 
-.right-shadded-box[
-## Builds
-- TFS Build Server
-- Jenkins
-- TeamCity
+.top-title[
+# Continuous Intergration
 ]
+???
+
+- Checking code into source controll frequently
+- Are builds being run?
+- Are unit tests being run
 
 ---
 class: contain-image
 
 background-image: url("images/deploy.png")
 
-.left-shadded-box[
-## Deployments
-- MS Release Managment
-- Octopus
+.bottom-title[
+# Continuous Deployments
 ]
+
+???
+
+- The act of deploying frequently
 
 ---
 
@@ -1058,15 +1120,16 @@ class: contain-image
 
 background-image: url("images/puppet.jpg")
 
-.right-shadded-box[
-## Infrastructure Automation
-- Puppet
-- Chef
-- Ansible
-
+.bottom-title[
+# Infrastructure Automation
 ]
 
 ???
+
+# Servers as code
+- Puppet
+- Chef
+- Ansible
 
 https://stackify.com/best-cloud-tools-infrastructure-automation/
 
